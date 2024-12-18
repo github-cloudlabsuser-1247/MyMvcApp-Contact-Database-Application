@@ -5,10 +5,10 @@
       {
         "type": "Microsoft.Web/sites",
         "apiVersion": "2021-02-01",
-        "name": "[parameters('appName')]",
-        "location": "[parameters('location')]",
+        "name": "MVCApp",
+        "location": "Canada Central ",
         "properties": {
-          "serverFarmId": "[parameters('hostingPlanId')]",
+          "serverFarmId": "abc",
           "httpsOnly": true,
           "siteConfig": {
             "appSettings": [
@@ -23,15 +23,15 @@
       {
         "type": "Microsoft.Web/serverfarms",
         "apiVersion": "2021-02-01",
-        "name": "[parameters('hostingPlanId')]",
-        "location": "[parameters('location')]",
+        "name": "abc",
+        "location": "Canada Central",
         "sku": {
           "Tier": "Standard",
           "Name": "S1",
           "Capacity": 1
         },
         "properties": {
-          "name": "[parameters('hostingPlanId')]",
+          "name": "ASP-MyMvcApp1group-9b67 (S1: 1)",
           "workerSize": "0"
         }
       }

@@ -1,6 +1,41 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
+      "resources": [
+      {
+        "type": "Microsoft.Web/sites",
+        "apiVersion": "2021-02-01",
+        "name": "MVCApp",
+        "location": "Canada Central ",
+        "properties": {
+          "serverFarmId": "abc",
+          "httpsOnly": true,
+          "siteConfig": {
+            "appSettings": [
+              {
+                "name": "WEBSITE_NODE_DEFAULT_VERSION",
+                "value": "14.0"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "Microsoft.Web/serverfarms",
+        "apiVersion": "2021-02-01",
+        "name": "abc",
+        "location": "Canada Central",
+        "sku": {
+          "Tier": "Standard",
+          "Name": "S1",
+          "Capacity": 1
+        },
+        "properties": {
+          "name": "ASP-MyMvcApp1group-9b67 (S1: 1)",
+          "workerSize": "0"
+        }
+      }
+    ],
     "parameters": {
       "appName": {
         "type": "string",

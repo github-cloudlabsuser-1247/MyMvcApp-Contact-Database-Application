@@ -4,7 +4,7 @@
     "parameters": {
         
         "appName": {
-            "value": "MyMvcApp1"
+            "value": "AzureAppMVC"
         },
         "appServicePlanName": {
             "value": "ASP-MyMvcApp1group-9b67 (S1: 1)"

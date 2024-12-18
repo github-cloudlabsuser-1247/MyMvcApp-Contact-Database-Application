@@ -5,11 +5,11 @@
     "parameters": {
         "appName": {
             "type": "string",
-            "defaultValue": "MyMvcApp1"
+            "defaultValue": "AzureAppMVC"
         },
         "appServicePlanName": {
             "type": "string",
-            "defaultValue": "ASP-MyMvcApp1group-9b67"
+            "defaultValue": "ASP-MyMvcApp1group-9b67 (S1: 1)"
         },
         "sqlServerName": {
             "type": "string",

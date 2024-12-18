@@ -90,3 +90,5 @@ C:\Users\azureuser\Documents\new_doc\MyMvcApp-Contact-Database-Application\obj\D
 C:\Users\azureuser\Documents\new_doc\MyMvcApp-Contact-Database-Application\obj\Debug\net8.0\MyMvcApp.pdb
 C:\Users\azureuser\Documents\new_doc\MyMvcApp-Contact-Database-Application\obj\Debug\net8.0\MyMvcApp.genruntimeconfig.cache
 C:\Users\azureuser\Documents\new_doc\MyMvcApp-Contact-Database-Application\obj\Debug\net8.0\ref\MyMvcApp.dll
+C:\Users\azureuser\Documents\new_doc\MyMvcApp-Contact-Database-Application\bin\Debug\net8.0\deploy.json
+C:\Users\azureuser\Documents\new_doc\MyMvcApp-Contact-Database-Application\bin\Debug\net8.0\deploy.parameters.json

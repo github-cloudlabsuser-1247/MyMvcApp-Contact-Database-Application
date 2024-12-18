@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/codespace/.nuget/packages/": {}
+    "C:\\Users\\azureuser\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/workspaces/MyMvcApp-Contact-Database-Application/MyMvcApp.csproj",
+      "projectUniqueName": "C:\\Users\\azureuser\\Documents\\new_doc\\MyMvcApp-Contact-Database-Application\\MyMvcApp.csproj",
       "projectName": "MyMvcApp",
-      "projectPath": "/workspaces/MyMvcApp-Contact-Database-Application/MyMvcApp.csproj",
-      "packagesPath": "/home/codespace/.nuget/packages/",
-      "outputPath": "/workspaces/MyMvcApp-Contact-Database-Application/obj/",
+      "projectPath": "C:\\Users\\azureuser\\Documents\\new_doc\\MyMvcApp-Contact-Database-Application\\MyMvcApp.csproj",
+      "packagesPath": "C:\\Users\\azureuser\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\azureuser\\Documents\\new_doc\\MyMvcApp-Contact-Database-Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/codespace/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\azureuser\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -67,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

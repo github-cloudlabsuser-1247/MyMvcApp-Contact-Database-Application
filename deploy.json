@@ -1,0 +1,83 @@
+{
+    
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "appName": {
+            "type": "string",
+            "defaultValue": "MyMvcApp1"
+        },
+        "appServicePlanName": {
+            "type": "string",
+            "defaultValue": "ASP-MyMvcApp1group-9b67"
+        },
+        "sqlServerName": {
+            "type": "string",
+            "defaultValue": "mySqlServer"
+        },
+        "sqlAdminLogin": {
+            "type": "string",
+            "defaultValue": "sqlAdmin"
+        },
+        "sqlAdminPassword": {
+            "type": "securestring"
+        },
+        "databaseName": {
+            "type": "string",
+            "defaultValue": "myDatabase"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2021-02-01",
+            "name": "[parameters('appName')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('appServicePlanName'))]",
+                "httpsOnly": true
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('appServicePlanName'))]"
+            ]
+        },
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2021-02-01",
+            "name": "[parameters('appServicePlanName')]",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "F1",
+                "tier": "Free"
+            },
+            "properties": {
+                "reserved": false
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers",
+            "apiVersion": "2021-02-01",
+            "name": "[parameters('sqlServerName')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "administratorLogin": "[parameters('sqlAdminLogin')]",
+                "administratorLoginPassword": "[parameters('sqlAdminPassword')]"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases",
+            "apiVersion": "2021-02-01",
+            "name": "[concat(parameters('sqlServerName'), '/', parameters('databaseName'))]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "collation": "SQL_Latin1_General_CP1_CI_AS",
+                "maxSizeBytes": "2147483648",
+                "sampleName": "AdventureWorksLT"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('sqlServerName'))]"
+            ]
+        }
+    ],
+    "outputs": {}
+}

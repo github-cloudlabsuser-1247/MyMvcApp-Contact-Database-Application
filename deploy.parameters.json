@@ -2,24 +2,35 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        
-        "appName": {
-            "value": "AzureAppMVC"
-        },
-        "appServicePlanName": {
-            "value": "ASP-MyMvcApp1group-9b67 (S1: 1)"
-        },
         "sqlServerName": {
             "value": "mySqlServer"
         },
-        "sqlAdminLogin": {
-            "value": "sqlAdmin"
+        "sqlServerAdminLogin": {
+            "value": "myAdminLogin"
         },
-        "sqlAdminPassword": {
-            "value": "1234" 
+        "sqlServerAdminPassword": {
+            "value": "myAdminPassword"
         },
-        "databaseName": {
+        "sqlDatabaseName": {
             "value": "myDatabase"
+        },
+        "sqlDatabaseEdition": {
+            "value": "Standard"
+        },
+        "sqlDatabaseServiceObjective": {
+            "value": "S1"
+        },
+        "appServicePlanName": {
+            "value": "myAppSeASP-MyMvcApp1group-9b67 (S1: 1)rvicePlan"
+        },
+        "appServiceName": {
+            "value": "AzureAppMVC"
+        },
+        "appServiceSku": {
+            "value": "P1v2"
+        },
+        "appServiceEnvironment": {
+            "value": "myAppServiceEnvironment"
         }
     }
 }

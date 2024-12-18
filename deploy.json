@@ -1,57 +1,30 @@
 {
-    
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {
-        "appName": {
-            "type": "string",
-            "defaultValue": "AzureAppMVC"
-        },
-        "appServicePlanName": {
-            "type": "string",
-            "defaultValue": "ASP-MyMvcApp1group-9b67 (S1: 1)"
-        },
-        "sqlServerName": {
-            "type": "string",
-            "defaultValue": "mySqlServer"
-        },
-        "sqlAdminLogin": {
-            "type": "string",
-            "defaultValue": "sqlAdmin"
-        },
-        "sqlAdminPassword": {
-            "type": "securestring"
-        },
-        "databaseName": {
-            "type": "string",
-            "defaultValue": "myDatabase"
-        }
-    },
     "resources": [
         {
             "type": "Microsoft.Web/sites",
             "apiVersion": "2021-02-01",
-            "name": "[parameters('appName')]",
+            "name": "[parameters('siteName')]",
             "location": "[resourceGroup().location]",
             "properties": {
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('appServicePlanName'))]",
-                "httpsOnly": true
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms', parameters('appServicePlanName'))]"
+                "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
             ]
         },
         {
             "type": "Microsoft.Web/serverfarms",
             "apiVersion": "2021-02-01",
-            "name": "[parameters('appServicePlanName')]",
+            "name": "[parameters('hostingPlanName')]",
             "location": "[resourceGroup().location]",
             "sku": {
                 "name": "F1",
                 "tier": "Free"
             },
             "properties": {
-                "reserved": false
+                "name": "[parameters('hostingPlanName')]"
             }
         },
         {
@@ -79,5 +52,65 @@
             ]
         }
     ],
-    "outputs": {}
+    "parameters": {
+        "siteName": {
+            "type": "string",
+            "defaultValue": "MyMvcApp"
+        },
+        "hostingPlanName": {
+            "type": "string",
+            "defaultValue": "MyMvcAppPlan"
+        },
+        "sqlServerName": {
+            "type": "string",
+            "defaultValue": "mySqlServer"
+        },
+        "sqlAdminLogin": {
+            "type": "string",
+            "defaultValue": "sqlAdmin"
+        },
+        "sqlAdminPassword": {
+            "type": "securestring",
+            "defaultValue": "sqlPass"
+        },
+        "databaseName": {
+            "type": "string",
+            "defaultValue": "myDatabase"
+        },
+        "sqlServerAdminLogin": {
+            "type": "string",
+            "defaultValue": "sqlAdmin"
+        },
+        "sqlServerAdminPassword": {
+            "type": "securestring"
+        },
+        "sqlDatabaseName": {
+            "type": "string",
+            "defaultValue": "myDatabase"
+        },
+        "sqlDatabaseEdition": {
+            "type": "string",
+            "defaultValue": "Standard"
+        },
+        "sqlDatabaseServiceObjective": {
+            "type": "string",
+            "defaultValue": "S1"
+        },
+        "appServicePlanName": {
+            "type": "string",
+            "defaultValue": "MyMvcAppPlan"
+        },
+        "appServiceName": {
+            "type": "string",
+            "defaultValue": "MyMvcApp"
+        },
+        "appServiceSku": {
+            "type": "string",
+            "defaultValue": "F1"
+        },
+        "appServiceEnvironment": {
+            "type": "string",
+            "defaultValue": "Production"
+        }
+    }
 }

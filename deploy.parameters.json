@@ -1,39 +1,37 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "sqlServerName": {
-            "value": "mySqlServer"
-        },
-        "sqlServerAdminLogin": {
-            "value": "myAdminLogin"
-        },
-        "sqlServerAdminPassword": {
-            "value": "myAdminPassword"
-        },
-        "sqlDatabaseName": {
-            "value": "myDatabase"
-        },
-        "sqlDatabaseEdition": {
-            "value": "Standard"
-        },
-        "sqlDatabaseServiceObjective": {
-            "value": "S1"
-        },
-        "appServicePlanName": {
-            "value": "myAppSeASP-MyMvcApp1group-9b67 (S1: 1)rvicePlan"
-        },
-        "appServiceName": {
-            "value": "AzureAppMVC"
-        },
-        "appServiceSku": {
-            "value": "P1v2"
-        },
-        "appServiceEnvironment": {
-            "value": "myAppServiceEnvironment"
-        },
-        "sqlAdminPassword": {
-            "value": "1234" 
+      "appName": {
+        "type": "string",
+        "metadata": {
+          "description": "MyMvcApp"
         }
+      },
+      "location": {
+        "type": "string",
+        "metadata": {
+          "description": "Canada Central"
+        }
+      },
+      "sku": {
+        "type": "string",
+        "defaultValue": "S1",
+        "metadata": {
+          "description": "Standard"
+        }
+      },
+      "hostingPlanName": {
+        "type": "string",
+        "metadata": {
+          "description": "ASP-GitHubCopilotChallenges-ab3b"
+        }
+      },
+      "resourceGroupName": {
+        "type": "string",
+        "metadata": {
+          "description": "GitHub-Copilot-Challenges"
+        }
+      }
     }
-}
+  }

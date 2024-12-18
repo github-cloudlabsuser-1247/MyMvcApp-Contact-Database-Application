@@ -31,6 +31,9 @@
         },
         "appServiceEnvironment": {
             "value": "myAppServiceEnvironment"
+        },
+        "sqlAdminPassword": {
+            "value": "1234" 
         }
     }
 }
